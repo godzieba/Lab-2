@@ -5,18 +5,17 @@ import java.util.Collections;
 
 public class Deck  {
 
-	private ArrayList<Card> Deck;
+	private static ArrayList<Card> Deck = new ArrayList<Card>();
 	
 	public Deck () {
-		ArrayList<Card> deck = new ArrayList<Card>();
 		for (int i = 1; i < 5; i++) {
 			for (int j = 2; j < 15; j++){
 				Card card = new Card(j, i, j);
-				deck.add(card);				
+				Deck.add(card);				
 			}
 		}
-		Collections.shuffle(deck);
-		this.Deck = deck;
+		Collections.shuffle(Deck);
+		return;
 	}
 	
 	public ArrayList<Card> getDeck() {

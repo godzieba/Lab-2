@@ -1,8 +1,6 @@
 package pokerBase;
 
-import java.util.Comparator;
-
-public class Card {
+public class Card implements Comparable{
 	
 	private int iCardNbr;
 	private int iCardSuit;
@@ -24,5 +22,11 @@ public class Card {
 	
 	public int getiCardRank() {
 		return iCardRank;
+	}
+
+	@Override
+	public int compareTo(Object o1) {
+		Card c = (Card)o1;
+		return this.iCardNbr - c.iCardNbr;
 	}
 }
